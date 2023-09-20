@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+
+{% block title %} UPDATE_STUDENT {% endblock title %}
+
+{% block main_content %}
+<h1 class="text-center my-2"> UPDATE STUDENT DETAILS<h1>
+  <div class="container">
+       <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <div class="cards bg-info"> 
+              <div class="card-body">
+                <form action="/do-update/{{edit.id}}" method="post">
+                    {% csrf_token %}
+
+                    
+                    <div class="md-3 ">
+                       <label for="Name">Name </label>
+                       <input type="text" id="name" class="form-control" name='name' placeholder="Enter Your Name" require value={{edit.m_name}}>
+                     </div>
+                   <div class="md-3 ">
+                       <label for="roll">Roll</label>
+                       <input type="text" id="roll" class="form-control" name='roll' placeholder='Enter Your roll' require value={{edit.m_roll}}>
+                   </div>
+
+                   <div class="md-3 ">
+                       <label for="email">Email </label>
+                       <input type="text" id="email" class="form-control" name='email' placeholder ="Enter Your Email" require value={{edit.m_email}}>
+                   </div>
+
+                  
+
+                   <div class="md-3">
+                       <label for="contact">Contact </label>
+                       <input id="contact" class="form-control" name='contact' placeholder="Enter Your Contact Number " require value={{edit.m_phone}}>
+                   </div>
+                  <div class="md-3">
+                       <label for="adress">Adress </label>
+                       <textarea name="adress" id="adress" row="5" class="form-control"  placeholder="Enter Your Adress " >{{edit.m_adress}}</textarea>
+
+
+                   </div>
+
+                   <div class="container">
+                   
+                    <button  class="btn btn-primary">
+                        Update Detail
+                    </button>
+                   
+                   </div>
+                
+                
+                </form>
+              
+              </div>
+            
+            </div>
+          
+             
+          </div>
+       </div>
+  
+  </div>
+
+{% endblock main_content %}

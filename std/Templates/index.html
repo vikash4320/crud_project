@@ -1,0 +1,129 @@
+{% extends 'base.html'%}
+
+{% block title %} INDEX {% endblock title%}
+
+{% block main_content %}
+
+ <h1 class="text-center">*********   STUDENT DETAIL    **********    <h1>
+ <h2 class="text-center my-3"> LIST OF STUDENT  <h2>
+
+
+
+
+ <div class="container my-3">
+   <table class="table table-success table-striped">
+        <tr class ="text-center">
+              <th> S.NO</th>
+              <th> Name</th>
+              <th> Roll</th>
+              <th> Email</th>
+              <th> Contact</th>
+              <th> Adress </th>
+              <th> Edit</th>
+              <th> Delete</th>
+        </tr>
+
+        {% for i  in h_obj1 %}
+       <tr class="text-center">
+                               <td>{{forloop.counter}} </td>  
+                               <td>{{i.m_name}} </td>
+                               <td>{{i.m_roll}} </td>
+                               <td>{{i.m_email}} </td>
+                               <td>{{i.m_phone}}</td>
+                               <td>{{i.m_adress}}</td> 
+                               <td><a type="button" href="/update/{{i.id}}" class="btn btn-outline-primary">Edit</a></td>
+                               <td><a type="button" href="/delete/{{i.id}}" class="btn btn-outline-danger">Delete</a></td> 
+
+
+
+        </tr>
+
+     {% endfor %}
+
+     
+
+    </table>
+ </div>
+
+ 
+
+
+
+
+
+
+
+
+
+{% comment %} 
+ <div class="col-md-12">
+            <div class="card">
+               <div class="card-body">
+                   <table class="table">
+                      <thead>
+                         <tr>
+                            <th> S.NO</th>
+                            <th> Name</th>
+                            <th> Roll</th>
+                            <th> Email</th>
+                            <th> Contact</th>
+                            <th> Adress </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                         { % for i in h_obj %}
+                            <tr>
+                               <td>{{forloop.counter}} </td>  
+                               <td>{{i.m_name}} </td>
+                               <td>{{i.m_roll}} </td>
+                               <td>{{i.m_email}} </td>
+                               <td>{{i.m_phone}}</td>
+                               <td>{{i.m_adress}}</td>
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                    </table>
+                 <div>  
+            <div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <div class="container">
+       <div class="row">
+         
+                  </tbody>
+                  
+                  </div>
+                
+                
+                </table>
+               
+               
+               
+               </div>
+
+
+
+            </div>
+          
+          
+          </div>
+       
+       
+       
+       </div>
+    
+    
+    </div> {% endcomment %} 
+
+
+{% endblock main_content %}
